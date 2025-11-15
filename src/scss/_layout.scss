@@ -1,37 +1,26 @@
 .content {
   height: 100vh;
+  width: 100vw;
   overflow: hidden;
   position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
 
-  display: grid;
-  grid-template-columns:
-    [flag-cl-start balloon-l-start] 1fr
-    [flag-cl-end balloon-l-end flag-l-start frame-start] 1fr
-    [flag-l-end flag-r-start] 1fr
-    [flag-r-end flag-cr-start balloon-r-start frame-end] 1fr [flag-cr-end balloon-r-end];
-  grid-template-rows: 30vh 70vh;
-
-  & > * {
-    width: 100%;
-  }
-
-  @media only screen and (max-width: 800px) {
-    grid-template-columns:
-      [flag-l-start balloon-l-start frame-start] 1fr
-      [balloon-l-end flag-l-end flag-r-start balloon-r-start ] 1fr [flag-r-end balloon-r-end frame-end];
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .frame {
-  grid-row: 2/3;
-  grid-column: frame-start / frame-end;
-
   display: none;
   opacity: 0;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 .page-404 {
